@@ -25,7 +25,7 @@ public class Mario {
                 in.nextLine();
             } while (height < 0 || height > MAX_HEIGHT);
 
-            Pyramid pyramid = ShapeBuilder.pyramid(height);
+            Pyramid pyramid = ShapeBuilder.getInstance().pyramid(height);
 
             //ask the user to make a choice for print
             System.out.println("\nDo you want to print the half pyramid to the console or to a text file?");
