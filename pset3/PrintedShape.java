@@ -3,6 +3,4 @@
  */
 public interface PrintedShape{
     String draw();
-    @Override
-    String toString();
 }

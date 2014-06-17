@@ -6,11 +6,19 @@ import java.io.IOException;
 /**
  * Created by Vince on 5/28/2014.
  */
-public class ShapeToFile implements ShapePrinter{
+public class FilePrinter implements ShapePrinter {
     private String fileName;
+    private static FilePrinter filePrinter;
 
-    public ShapeToFile(String fileName) {
+    private FilePrinter(String fileName){
         this.fileName = fileName;
+    }
+
+    public static FilePrinter getInstance(String fileName){
+        if(filePrinter == null){
+            filePrinter = new FilePrinter(fileName);
+        }
+        return filePrinter;
     }
 
     @Override

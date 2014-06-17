@@ -36,9 +36,9 @@ public class Mario {
 
             ShapePrinter pyramidPrinter;
             if(choice.compareToIgnoreCase("c") == 0){
-                pyramidPrinter = new ShapeToConsole();
+                pyramidPrinter = ConsolePrinter.getInstance();
             } else {
-                pyramidPrinter = new ShapeToFile("pyramid.txt");
+                pyramidPrinter = FilePrinter.getInstance("pyramid.txt");
             }
             pyramidPrinter.print(pyramid);
             //ask the user if he wants to build another
