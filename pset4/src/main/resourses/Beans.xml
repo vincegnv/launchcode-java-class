@@ -7,11 +7,8 @@
 
     <bean id="mario" class="com.vincegnv.pset4.Mario">
         <property name="shapeBuilder" ref="shapeBuilder"/>
-        <property name="printer" ref="printer"/>
     </bean>
 
     <bean id="shapeBuilder" class="com.vincegnv.pset4.ShapeBuilder"></bean>
-
-    <bean id="printer" class="com.vincegnv.pset4.Printer"></bean>
 
 </beans>

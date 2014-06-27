@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public class Mario {
     static final int MAX_HEIGHT = 23;
-    private Printer printer;
     private ShapeBuilder shapeBuilder;
 
     public static void main(String[] args){
@@ -25,10 +24,6 @@ public class Mario {
     }
 
     public Mario() {}
-
-    public void setPrinter(Printer printer){
-        this.printer = printer;
-    }
 
     public void setShapeBuilder(ShapeBuilder shapeBuilder){
         this.shapeBuilder = shapeBuilder;
@@ -52,6 +47,7 @@ public class Mario {
             } while (height < 0 || height > MAX_HEIGHT);
 
             Pyramid pyramid = shapeBuilder.pyramid(height);
+            ShapePrinter printer;
 
             //ask the user to make a choice for print
             System.out.println("\nDo you want to print the half pyramid to the console or to a text file?");
@@ -61,9 +57,9 @@ public class Mario {
             } while (choice.compareToIgnoreCase("c") != 0 && choice.compareToIgnoreCase("f") != 0);
 
             if(choice.compareToIgnoreCase("c") == 0){
-                printer.setPrinter(new ConsolePrinter());
+                printer = new ConsolePrinter();
             } else {
-                printer.setPrinter(new FilePrinter("pyramid.txt"));
+                printer = new FilePrinter("pyramid.txt");
             }
             printer.print(pyramid);
             //ask the user if he wants to build another
