@@ -12,18 +12,18 @@ import java.io.IOException;
 
 public class FilePrinter implements ShapePrinter {
     private String fileName;
-    private static FilePrinter filePrinter;
+//    private static FilePrinter filePrinter;
 
-    private FilePrinter(String fileName){
+    public FilePrinter(String fileName){
         this.fileName = fileName;
     }
 
-    public static FilePrinter getInstance(String fileName){
-        if(filePrinter == null){
-            filePrinter = new FilePrinter(fileName);
-        }
-        return filePrinter;
-    }
+//    public static FilePrinter getInstance(String fileName){
+//        if(filePrinter == null){
+//            filePrinter = new FilePrinter(fileName);
+//        }
+//        return filePrinter;
+//    }
 
     @Override
     public void print(PrintedShape shape) {

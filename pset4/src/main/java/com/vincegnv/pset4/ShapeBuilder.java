@@ -6,17 +6,7 @@ package com.vincegnv.pset4;
 
 public class ShapeBuilder {
 
-    private static ShapeBuilder shapeBuilder;
-
-    private ShapeBuilder() {
-    }
-
-    public static ShapeBuilder getInstance(){
-        if(shapeBuilder == null){
-            shapeBuilder = new ShapeBuilder();
-        }
-        return shapeBuilder;
-    }
+    private ShapeBuilder() {}
 
     public Pyramid pyramid(int height){
         return new Pyramid(height);

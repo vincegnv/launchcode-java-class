@@ -22,14 +22,16 @@ public class Mario {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         Mario obj = (Mario)context.getBean("mario");
         obj.start();
-
-//        Mario mario = new Mario(ShapeBuilder.getInstance(), Printer.getInstance());
-//        mario.start();
     }
 
-    public Mario(ShapeBuilder shapeBuilder, Printer printer) {
-        this.shapeBuilder = shapeBuilder;
+    public Mario() {}
+
+    public void setPrinter(Printer printer){
         this.printer = printer;
+    }
+
+    public void setShapeBuilder(ShapeBuilder shapeBuilder){
+        this.shapeBuilder = shapeBuilder;
     }
 
     public void start(){
@@ -58,11 +60,10 @@ public class Mario {
                 choice = in.next();
             } while (choice.compareToIgnoreCase("c") != 0 && choice.compareToIgnoreCase("f") != 0);
 
-//            ShapePrinter pyramidPrinter;
             if(choice.compareToIgnoreCase("c") == 0){
-                printer.setPrinter(ConsolePrinter.getInstance());
+                printer.setPrinter(new ConsolePrinter());
             } else {
-                printer.setPrinter(FilePrinter.getInstance("pyramid.txt"));
+                printer.setPrinter(new FilePrinter("pyramid.txt"));
             }
             printer.print(pyramid);
             //ask the user if he wants to build another

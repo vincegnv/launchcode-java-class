@@ -6,8 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="mario" class="com.vincegnv.pset4.Mario">
-        <constructor-arg name="shapeBuilder" ref="shapeBuilder"/>
-        <constructor-arg name="printer" ref="printer"/>
+        <property name="shapeBuilder" ref="shapeBuilder"/>
+        <property name="printer" ref="printer"/>
     </bean>
 
     <bean id="shapeBuilder" class="com.vincegnv.pset4.ShapeBuilder"></bean>
