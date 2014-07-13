@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="metrolink" class="com.vincegnv.pset6.Metrolink">
+        <property name="helpDesk" ref="helpDesk"></property>
+    </bean>
+    <bean id="helpDesk" class="com.vincegnv.pset6.HelpDesk">
+        <property name="query" ref="metrolinkDBQuery"></property>
+        <property name="jodaTime" ref="jodaTime"></property>
+    </bean>
+    <bean id="metrolinkDBQuery" class="com.vincegnv.pset6.MetrolinkDBQuery"></bean>
+    <bean id="jodaTime" class="com.vincegnv.pset6.JodaTime"></bean>
+
+
+
+</beans>
